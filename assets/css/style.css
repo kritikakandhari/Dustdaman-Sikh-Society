@@ -118,7 +118,7 @@ footer { margin-top: auto !important; margin-bottom: 0 !important; padding-botto
   cursor: pointer;
   margin-left: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   header {
     flex-wrap: nowrap;
     justify-content: space-between;
