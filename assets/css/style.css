@@ -183,9 +183,7 @@ footer { margin-top: auto !important; margin-bottom: 0 !important; padding-botto
 
 @media (max-width: 768px) {
   /* Disable YouTube video background on mobile for instant load & clean look */
-  .video-cover {
-    display: none !important;
-  }
+  
   #hero-thumb {
     opacity: 1 !important;
   }
