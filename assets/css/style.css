@@ -107,3 +107,59 @@ footer { margin-top: auto !important; margin-bottom: 0 !important; padding-botto
 .section-white {
   background-color: #ffffff;
 }
+
+/* Responsive Design */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--pr);
+  cursor: pointer;
+  margin-left: auto;
+}
+@media (max-width: 768px) {
+  header {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  header b {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .menu-btn {
+    display: block;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    padding: 10px 0;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    border-top: 1px solid #eee;
+  }
+  nav.active {
+    display: flex;
+  }
+  nav a {
+    text-align: center;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 0;
+  }
+  nav a.btn {
+    margin: 10px auto;
+    width: fit-content;
+  }
+  /* Fix video letterboxing on portrait */
+  #hero-vid-bg > div:nth-child(2) {
+    width: 300vw !important;
+    height: 300vh !important;
+  }
+}
