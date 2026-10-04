@@ -17,14 +17,12 @@
 
 <div class="hero" style="position:relative; overflow:hidden; min-height:520px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
   <!-- Video Carousel Background -->
-  <div id="hero-vid-bg" style="position:absolute; inset:0; z-index:0; overflow:hidden; background: #1a1a1a;">
-    <div id="hero-thumb" style="position:absolute; inset:0; background: url('assets/img/kirtan.jpg') center/cover no-repeat; z-index: 1; transition: opacity 0.8s ease;"></div>
-    <div class="video-cover">
-      <div id="hero-player" style="width:100%; height:100%; transition: opacity 0.5s; opacity: 0;"></div>
-    </div>
-    <!-- Dark overlay for cinematic look -->
-    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.6); z-index: 2;"></div>
-  </div>
+  <!-- Native Video Background -->
+  <video autoplay loop muted playsinline style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; pointer-events:none;">
+    <source src="assets/KKDD.mp4" type="video/mp4">
+  </video>
+  <!-- Dark overlay for cinematic look -->
+  <div style="position:absolute; inset:0; background:rgba(0,0,0,0.6); z-index: 1;"></div>
   <!-- Content on top -->
   <div class="hero-content" style="position:relative; z-index:1; text-align:center; padding: 80px 16px 60px; width:100%;">
     <img src="assets/img/logo.jpg" alt="" style="width:110px; height:110px; border-radius:50%; border:4px solid #facc15; box-shadow:0 8px 24px rgba(0,0,0,0.5); margin-bottom:18px;">
@@ -32,12 +30,7 @@
     <div class="wj" style="margin-bottom:12px; color:#facc15; font-size:1.15rem; text-shadow:0 2px 4px rgba(0,0,0,0.8);">ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ॥ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਿਹ ॥</div>
     <p data-i="tag" style="max-width:600px; margin:0 auto 24px; color:#f3f4f6; font-size:1.1rem; text-shadow:0 1px 4px rgba(0,0,0,0.8);"></p>
     <a class="btn" href="contact.html" data-i="cta"></a>
-    <!-- Video indicator dots -->
-    <div id="vid-dots" style="margin-top:20px; display:flex; gap:8px; justify-content:center;">
-      <span class="vid-dot active" onclick="switchHeroVid(0)" style="width:10px;height:10px;border-radius:50%;background:#ca8a04;cursor:pointer;transition:.3s;display:inline-block;"></span>
-      <span class="vid-dot" onclick="switchHeroVid(1)" style="width:10px;height:10px;border-radius:50%;background:rgba(202,138,4,0.35);cursor:pointer;transition:.3s;display:inline-block;"></span>
     </div>
-  </div>
   <svg style="position:absolute; bottom:0; left:0; right:0; z-index:1;" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q360 70 720 30 T1440 30 V60 H0Z" fill="var(--bg)"/></svg>
 </div>
 
@@ -162,79 +155,15 @@
 
 <script src="assets/js/script.js"></script>
 <script>
-// --- HERO VIDEO CAROUSEL ---
-var HERO_VIDS = ['xDVx1Yb7sCQ', 'GYaoqV-mCA4'];
-var heroPlayer, heroCurIdx = 0, heroTimer;
-
-function startHeroTimer() { /* auto switch disabled */ }
-
-function nextHeroVid() {
-  clearTimeout(heroTimer);
-  heroCurIdx = (heroCurIdx + 1) % HERO_VIDS.length;
-  switchHeroVid(heroCurIdx);
-}
-
-function switchHeroVid(idx) {
-  clearTimeout(heroTimer);
-  heroCurIdx = idx;
+  // --- YOUTUBE API INIT ---
+  var tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   
-  // Update Thumbnail Image Instantly
-  var thumb = document.getElementById('hero-thumb');
-  var playerDiv = document.getElementById('hero-player');
-  if(thumb && playerDiv) {
-      thumb.style.backgroundImage = "url('https://img.youtube.com/vi/" + HERO_VIDS[idx] + "/maxresdefault.jpg')";
-      thumb.style.opacity = '1';
-      playerDiv.style.opacity = '0';
-  }
-
-  if (heroPlayer && heroPlayer.loadVideoById) {
-    heroPlayer.loadVideoById({videoId: HERO_VIDS[idx], startSeconds: 10});
-  }
-  document.querySelectorAll('.vid-dot').forEach(function(d,i){
-    d.style.background = i === idx ? '#ca8a04' : 'rgba(202,138,4,0.35)';
-  });
-  startHeroTimer();
-}
-
-// --- YOUTUBE API INIT ---
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var p1, p2;
+  var p1, p2;
 function onYouTubeIframeAPIReady() {
-    // 1. Init Hero Player
-    var heroEl = document.getElementById('hero-player');
-    if (heroEl) {
-        heroPlayer = new YT.Player('hero-player', {
-            videoId: HERO_VIDS[0],
-            width: '100%',
-            height: '100%',
-            playerVars: { autoplay:1, mute:1, controls:0, loop:0, rel:0, modestbranding:1, showinfo:0, iv_load_policy:3, playsinline:1 },
-            events: {
-                'onReady': function(e){ 
-                    e.target.seekTo(10, true); 
-                    e.target.playVideo(); 
-                    setInterval(function() {
-                        if (e.target.getCurrentTime && e.target.getCurrentTime() >= 30) {
-                            e.target.seekTo(10, true);
-                        }
-                    }, 500);
-                },
-                'onStateChange': function(e){
-                    if (e.data === YT.PlayerState.PLAYING) {
-                        setTimeout(function() {
-                            document.getElementById('hero-thumb').style.opacity = '0';
-                            document.getElementById('hero-player').style.opacity = '1';
-                        }, 800);
-                    }
-                }
-            }
-        });
-    }
-
-    // 2. Init Video Grid Players
+    // Init Video Grid Players
     var player1El = document.getElementById('player1');
     if (player1El) {
         p1 = new YT.Player('player1', {

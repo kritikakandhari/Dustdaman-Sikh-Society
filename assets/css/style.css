@@ -161,32 +161,13 @@ footer { margin-top: auto !important; margin-bottom: 0 !important; padding-botto
   
 }
 
-.video-cover {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 56.25vw;
-    min-height: 100vh;
-    min-width: 177.77vh;
-    pointer-events: none;
-    z-index: 0;
-}
-.video-cover iframe {
-    position: absolute;
-    top: -20%;
-    left: -20%;
-    width: 140% !important;
-    height: 140% !important;
-}
+
+
 
 @media (max-width: 768px) {
   /* Disable YouTube video background on mobile for instant load & clean look */
   
-  #hero-thumb {
-    opacity: 1 !important;
-  }
+  
   
   /* Compact the hero content so it all fits on one screen without scrolling */
   .hero {
