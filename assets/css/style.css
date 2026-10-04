@@ -158,8 +158,22 @@ footer { margin-top: auto !important; margin-bottom: 0 !important; padding-botto
     width: fit-content;
   }
   /* Fix video letterboxing on portrait */
-  #hero-vid-bg > div:nth-child(2) {
-    width: 300vw !important;
-    height: 300vh !important;
-  }
+  
+}
+
+.video-cover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 56.25vw;
+    min-height: 100vh;
+    min-width: 177.77vh;
+    pointer-events: none;
+    z-index: 0;
+}
+.video-cover iframe {
+    width: 100% !important;
+    height: 100% !important;
 }

@@ -19,7 +19,7 @@
   <!-- Video Carousel Background -->
   <div id="hero-vid-bg" style="position:absolute; inset:0; z-index:0; overflow:hidden; background: #1a1a1a;">
     <div id="hero-thumb" style="position:absolute; inset:0; background: url('https://img.youtube.com/vi/xDVx1Yb7sCQ/maxresdefault.jpg') center/cover no-repeat; z-index: 1; transition: opacity 0.8s ease;"></div>
-    <div style="position:absolute; top:50%; left:50%; width:150%; height:150%; transform:translate(-50%,-50%); pointer-events:none; z-index: 0;">
+    <div class="video-cover">
       <div id="hero-player" style="width:100%; height:100%; transition: opacity 0.5s; opacity: 0;"></div>
     </div>
     <!-- Dark overlay for cinematic look -->
@@ -188,7 +188,7 @@ function switchHeroVid(idx) {
   }
 
   if (heroPlayer && heroPlayer.loadVideoById) {
-    heroPlayer.loadVideoById({videoId: HERO_VIDS[idx], startSeconds: 10});
+    heroPlayer.loadVideoById({videoId: HERO_VIDS[idx]});
   }
   document.querySelectorAll('.vid-dot').forEach(function(d,i){
     d.style.background = i === idx ? '#ca8a04' : 'rgba(202,138,4,0.35)';
@@ -214,13 +214,7 @@ function onYouTubeIframeAPIReady() {
             playerVars: { autoplay:1, mute:1, controls:0, loop:0, rel:0, modestbranding:1, showinfo:0, iv_load_policy:3, playsinline:1 },
             events: {
                 'onReady': function(e){ 
-                    e.target.seekTo(10, true); 
                     e.target.playVideo(); 
-                    setInterval(function() {
-                        if (e.target.getCurrentTime && e.target.getCurrentTime() >= 30) {
-                            e.target.seekTo(10, true);
-                        }
-                    }, 500);
                 },
                 'onStateChange': function(e){
                     if (e.data === YT.PlayerState.PLAYING) {
