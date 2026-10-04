@@ -194,3 +194,8 @@ footer { margin-top: auto !important; margin-bottom: 0 !important; padding-botto
     margin-bottom: 24px !important;
   }
 }
+
+.m-break { display: none; }
+@media (max-width: 768px) {
+  .m-break { display: block; }
+}
