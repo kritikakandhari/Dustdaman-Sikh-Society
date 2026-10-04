@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><meta name="description" content="Dustdaman Sikh Society, Surrey BC: kirtan, tabla, harmonium, Punjabi classes and langar seva.">
+<meta property="og:title" content="Dustdaman Sikh Society"><meta property="og:description" content="Kirtan, tabla, harmonium, Punjabi classes and langar seva in Surrey, BC.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Dustdaman Sikh Society","telephone":"+16049024769","email":"dustdamansikhsociety@gmail.com","address":{"@type":"PostalAddress","streetAddress":"12899 79 Ave, Unit 267","addressLocality":"Surrey","addressRegion":"BC","postalCode":"V3W 1E6","addressCountry":"CA"}}</script>
+<title>Dustdaman Sikh Society</title>
+<link rel="stylesheet" href="style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head><body>
+<header>
+<img src="logo.jpg" alt="logo">
+<b data-i="name"></b>
+<nav><a href="index.html" data-i="n0"></a><a href="activities.html" data-i="n1"></a><a href="videos.html" data-i="n2"></a><a href="gallery.html" data-i="n3"></a><a href="contact.html" data-i="n4"></a>
+<button class="alt" id="lang">ਪੰਜਾਬੀ</button></nav>
+</header>
+
+<div class="hero" style="position:relative; overflow:hidden; min-height:520px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+  <!-- Video Carousel Background -->
+  <div id="hero-vid-bg" style="position:absolute; inset:0; z-index:0; overflow:hidden; background: #1a1a1a;">
+    <div id="hero-thumb" style="position:absolute; inset:0; background: url('https://img.youtube.com/vi/xDVx1Yb7sCQ/maxresdefault.jpg') center/cover no-repeat; z-index: 1; transition: opacity 0.8s ease;"></div>
+    <div style="position:absolute; top:50%; left:50%; width:150%; height:150%; transform:translate(-50%,-50%); pointer-events:none; z-index: 0;">
+      <div id="hero-player" style="width:100%; height:100%; transition: opacity 0.5s; opacity: 0;"></div>
+    </div>
+    <!-- Dark overlay for cinematic look -->
+    <div style="position:absolute; inset:0; background:rgba(0,0,0,0.6); z-index: 2;"></div>
+  </div>
+  <!-- Content on top -->
+  <div style="position:relative; z-index:1; text-align:center; padding: 80px 16px 60px; width:100%;">
+    <img src="logo.jpg" alt="" style="width:110px; height:110px; border-radius:50%; border:4px solid #facc15; box-shadow:0 8px 24px rgba(0,0,0,0.5); margin-bottom:18px;">
+    <h1 data-i="name" style="font-size:2.6rem; margin:0 0 8px; color:#ffffff; text-shadow:0 2px 8px rgba(0,0,0,0.8);"></h1>
+    <div class="wj" style="margin-bottom:12px; color:#facc15; font-size:1.15rem; text-shadow:0 2px 4px rgba(0,0,0,0.8);">ਵਾਹਿਗੁਰੂ ਜੀ ਕਾ ਖਾਲਸਾ ॥ ਵਾਹਿਗੁਰੂ ਜੀ ਕੀ ਫ਼ਤਿਹ ॥</div>
+    <p data-i="tag" style="max-width:600px; margin:0 auto 24px; color:#f3f4f6; font-size:1.1rem; text-shadow:0 1px 4px rgba(0,0,0,0.8);"></p>
+    <a class="btn" href="contact.html" data-i="cta"></a>
+    <!-- Video indicator dots -->
+    <div id="vid-dots" style="margin-top:20px; display:flex; gap:8px; justify-content:center;">
+      <span class="vid-dot active" onclick="switchHeroVid(0)" style="width:10px;height:10px;border-radius:50%;background:#ca8a04;cursor:pointer;transition:.3s;display:inline-block;"></span>
+      <span class="vid-dot" onclick="switchHeroVid(1)" style="width:10px;height:10px;border-radius:50%;background:rgba(202,138,4,0.35);cursor:pointer;transition:.3s;display:inline-block;"></span>
+    </div>
+  </div>
+  <svg style="position:absolute; bottom:0; left:0; right:0; z-index:1;" viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0 30 Q360 70 720 30 T1440 30 V60 H0Z" fill="var(--bg)"/></svg>
+</div>
+
+
+
+<div class="section-white" style="padding: 80px 0 60px;">
+  <section class="rv" style="text-align:center; max-width: 900px; margin: 0 auto; padding: 0 18px;">
+      <h2 data-i="welcomeT"></h2>
+      <p style="font-size: 1.15rem; color: var(--mu); line-height: 1.8;" data-i="welcomeP"></p>
+  </section>
+</div>
+
+
+<div class="marquee-wrapper">
+  <div class="marquee-content">
+    <span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span>
+    <span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span>
+    <!-- Duplicated for seamless loop -->
+    <span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span>
+    <span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span><span>ਸਤਿਨਾਮ ਵਾਹਿਗੁਰੂ</span>
+  </div>
+</div>
+
+<div class="section-white" style="padding: 60px 0;">
+<section id="about" class="rv"><h2 data-i="aboutT"></h2><div class="about"><div><img src="kirtan.jpg" style="width:100%; border-radius:16px; margin-bottom:18px; box-shadow:var(--sh);"><p data-i="aboutP"></p></div><div class="vals">
+<div class="card"><div class="ic"><i class="fa-solid fa-handshake"></i></div><div><h3 data-i="s1"></h3><p data-i="s1d"></p></div></div>
+<div class="card"><div class="ic"><i class="fa-solid fa-users"></i></div><div><h3 data-i="s2"></h3><p data-i="s2d"></p></div></div>
+<div class="card"><div class="ic"><i class="fa-solid fa-music"></i></div><div><h3 data-i="s3"></h3><p data-i="s3d"></p></div></div></div></div></section>
+
+</div>
+
+<div class="section-yellow" style="padding: 60px 0;">
+<section id="act-preview" class="rv" >
+    <div style="max-width: 1040px; margin: auto; padding: 0 18px;">
+        <h2 data-i="n1" style="text-align:center; color: var(--ac); font-size:2.2rem; margin-bottom: 30px;"></h2>
+        <div class="grid" id="acts"></div>
+        <div style="text-align:center; margin-top:30px;">
+            <a class="btn" href="activities.html">View All Activities</a>
+        </div>
+    </div>
+</section>
+
+</div>
+
+<div class="section-white" style="padding: 60px 0;">
+<section id="videos" class="rv" style="text-align:center;">
+    <h2 data-i="n2"></h2>
+    
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:30px; max-width:960px; margin:auto;">
+        
+        <!-- Video 1 -->
+        <div class="vid-container" style="position:relative; aspect-ratio:16/9; border-radius:16px; overflow:hidden; box-shadow:var(--sh);">
+            <div id="player1" style="pointer-events:none; position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+            <div style="position:absolute; inset:0; cursor:pointer;" onclick="handleOverlayClick(1, 'xDVx1Yb7sCQ')"></div>
+            <button id="mute1" onclick="toggleMute(1)" style="position:absolute; top:15px; right:15px; z-index:1; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:0.2s;"><i class="fa-solid fa-volume-xmark"></i></button>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="vid-container" style="position:relative; aspect-ratio:16/9; border-radius:16px; overflow:hidden; box-shadow:var(--sh);">
+            <div id="player2" style="pointer-events:none; position:absolute; top:0; left:0; width:100%; height:100%;"></div>
+            <div style="position:absolute; inset:0; cursor:pointer;" onclick="handleOverlayClick(2, 'GYaoqV-mCA4')"></div>
+            <button id="mute2" onclick="toggleMute(2)" style="position:absolute; top:15px; right:15px; z-index:1; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width:44px; height:44px; padding:0; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:0.2s;"><i class="fa-solid fa-volume-xmark"></i></button>
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+<!-- ELFSIGHT REVIEWS -->
+</div>
+
+<div class="section-yellow" style="padding: 60px 0;">
+<section id="reviews" class="rv" style=" padding: 0 18px;">
+    
+    <!-- Elfsight Google Reviews -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-ed19ba72-a9b2-4929-8f5c-10d361804603" data-elfsight-app-lazy></div>
+</section>
+
+<!-- GOOGLE MAPS LOCATION -->
+</div>
+
+<div class="section-white" style="padding: 60px 0;">
+<section id="location" class="rv" style=" padding: 0 18px;">
+    <h2><i class="fa-solid fa-map-location-dot"></i> Our Location</h2>
+    <div style="width:100%; border-radius:16px; overflow:hidden; box-shadow:0 4px 15px rgba(0,0,0,0.05); border: 2px solid var(--bd);">
+        <iframe src="https://www.google.com/maps?q=Dustdaman+Sikh+Society,+12899+79+Ave,+Unit+267,+Surrey,+BC+V3W+1E6&output=embed" width="100%" height="400" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+        <p style="color:var(--mu); font-size:1.1rem;"><i class="fa-solid fa-location-dot" style="color:var(--pr);"></i> 12899 79 Ave, Unit 267, Surrey, BC V3W 1E6</p>
+    </div>
+</section>
+</div>
+
+<footer>
+<div class="f-grid">
+  <div class="f-brand">
+    <img src="logo.jpg" alt="logo">
+    <h3 data-i="name"></h3>
+    <p data-i="tag" class="f-tag"></p>
+  </div>
+  <div class="f-links">
+    <h3>Quick Links</h3>
+    <a href="index.html" data-i="n0"></a>
+    <a href="activities.html" data-i="n1"></a>
+    <a href="videos.html" data-i="n2"></a>
+    <a href="gallery.html" data-i="n3"></a>
+    <a href="contact.html" data-i="n4"></a>
+  </div>
+  <div class="f-contact">
+    <h3>Contact Us</h3>
+    <a href="tel:+16049024769"><i class="fa-solid fa-phone"></i> +1 (604) 902-4769</a>
+    <span style="display:block; padding: 6px 0; font-size: 0.95rem; color: var(--tx);"><i class="fa-regular fa-clock" style="color:var(--pr); width:20px; text-align:center; margin-right:8px;"></i> 7:00 AM - 7:00 PM (Monday Closed)</span>
+    <a href="mailto:dustdamansikhsociety@gmail.com"><i class="fa-solid fa-envelope"></i> dustdamansikhsociety@gmail.com</a>
+    <a href="https://youtube.com/@dustdamansikhsociety2023?si=8NLfI50wWl8-PMSh" target="_blank" rel="noopener"><i class="fa-brands fa-youtube" style="color:#ef4444;"></i> YouTube Channel</a>
+  </div>
+</div>
+<div class="f-bottom">&copy; Dustdaman Sikh Society &middot; Surrey, BC</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// --- HERO VIDEO CAROUSEL ---
+var HERO_VIDS = ['xDVx1Yb7sCQ', 'GYaoqV-mCA4'];
+var heroPlayer, heroCurIdx = 0, heroTimer;
+
+function startHeroTimer() { /* auto switch disabled */ }
+
+function nextHeroVid() {
+  clearTimeout(heroTimer);
+  heroCurIdx = (heroCurIdx + 1) % HERO_VIDS.length;
+  switchHeroVid(heroCurIdx);
+}
+
+function switchHeroVid(idx) {
+  clearTimeout(heroTimer);
+  heroCurIdx = idx;
+  
+  // Update Thumbnail Image Instantly
+  var thumb = document.getElementById('hero-thumb');
+  var playerDiv = document.getElementById('hero-player');
+  if(thumb && playerDiv) {
+      thumb.style.backgroundImage = "url('https://img.youtube.com/vi/" + HERO_VIDS[idx] + "/maxresdefault.jpg')";
+      thumb.style.opacity = '1';
+      playerDiv.style.opacity = '0';
+  }
+
+  if (heroPlayer && heroPlayer.loadVideoById) {
+    heroPlayer.loadVideoById({videoId: HERO_VIDS[idx], startSeconds: 10});
+  }
+  document.querySelectorAll('.vid-dot').forEach(function(d,i){
+    d.style.background = i === idx ? '#ca8a04' : 'rgba(202,138,4,0.35)';
+  });
+  startHeroTimer();
+}
+
+// --- YOUTUBE API INIT ---
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var p1, p2;
+function onYouTubeIframeAPIReady() {
+    // 1. Init Hero Player
+    var heroEl = document.getElementById('hero-player');
+    if (heroEl) {
+        heroPlayer = new YT.Player('hero-player', {
+            videoId: HERO_VIDS[0],
+            width: '100%',
+            height: '100%',
+            playerVars: { autoplay:1, mute:1, controls:0, loop:0, rel:0, modestbranding:1, showinfo:0, iv_load_policy:3, playsinline:1 },
+            events: {
+                'onReady': function(e){ 
+                    e.target.seekTo(10, true); 
+                    e.target.playVideo(); 
+                    setInterval(function() {
+                        if (e.target.getCurrentTime && e.target.getCurrentTime() >= 30) {
+                            e.target.seekTo(10, true);
+                        }
+                    }, 500);
+                },
+                'onStateChange': function(e){
+                    if (e.data === YT.PlayerState.PLAYING) {
+                        document.getElementById('hero-thumb').style.opacity = '0';
+                        document.getElementById('hero-player').style.opacity = '1';
+                    }
+                }
+            }
+        });
+    }
+
+    // 2. Init Video Grid Players
+    var player1El = document.getElementById('player1');
+    if (player1El) {
+        p1 = new YT.Player('player1', {
+            videoId: 'xDVx1Yb7sCQ',
+            playerVars: { 'autoplay': 1, 'controls': 0, 'mute': 1, 'loop': 1, 'playlist': 'xDVx1Yb7sCQ', 'rel': 0, 'modestbranding': 1 },
+            events: { 'onReady': function(e){e.target.playVideo()} }
+        });
+    }
+
+    var player2El = document.getElementById('player2');
+    if (player2El) {
+        p2 = new YT.Player('player2', {
+            videoId: 'GYaoqV-mCA4',
+            playerVars: { 'autoplay': 1, 'controls': 0, 'mute': 1, 'loop': 1, 'playlist': 'GYaoqV-mCA4', 'rel': 0, 'modestbranding': 1 },
+            events: { 'onReady': function(e){e.target.playVideo()} }
+        });
+    }
+}
+
+// --- GRID VIDEO CONTROLS ---
+function toggleMute(n) {
+    var p = n === 1 ? p1 : p2;
+    var btn = document.getElementById('mute'+n);
+    if (p.isMuted()) {
+        p.unMute();
+        btn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+        btn.style.background = 'var(--ac)';
+    } else {
+        p.mute();
+        btn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+        btn.style.background = 'rgba(0,0,0,0.6)';
+    }
+}
+
+var clickTimers = {1:null, 2:null};
+function handleOverlayClick(n, ytId) {
+    if (clickTimers[n]) {
+        clearTimeout(clickTimers[n]);
+        clickTimers[n] = null;
+        window.open('https://youtube.com/watch?v=' + ytId, '_blank');
+        return;
+    }
+    clickTimers[n] = setTimeout(function() {
+        var p = n === 1 ? p1 : p2;
+        if (p.getPlayerState() === YT.PlayerState.PLAYING) p.pauseVideo();
+        else p.playVideo();
+        clickTimers[n] = null;
+    }, 250);
+}
+</script>
+
+</body></html>
