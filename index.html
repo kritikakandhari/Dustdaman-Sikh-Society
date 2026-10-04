@@ -224,8 +224,10 @@ function onYouTubeIframeAPIReady() {
                 },
                 'onStateChange': function(e){
                     if (e.data === YT.PlayerState.PLAYING) {
-                        document.getElementById('hero-thumb').style.opacity = '0';
-                        document.getElementById('hero-player').style.opacity = '1';
+                        setTimeout(function() {
+                            document.getElementById('hero-thumb').style.opacity = '0';
+                            document.getElementById('hero-player').style.opacity = '1';
+                        }, 800);
                     }
                 }
             }
