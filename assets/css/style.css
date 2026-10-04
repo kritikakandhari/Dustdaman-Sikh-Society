@@ -180,3 +180,38 @@ footer { margin-top: auto !important; margin-bottom: 0 !important; padding-botto
     width: 140% !important;
     height: 140% !important;
 }
+
+@media (max-width: 768px) {
+  /* Disable YouTube video background on mobile for instant load & clean look */
+  .video-cover {
+    display: none !important;
+  }
+  #hero-thumb {
+    opacity: 1 !important;
+  }
+  
+  /* Compact the hero content so it all fits on one screen without scrolling */
+  .hero {
+    min-height: 100vh !important;
+    justify-content: center !important;
+  }
+  .hero-content {
+    padding: 20px 16px !important;
+  }
+  .hero-content img {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 12px !important;
+  }
+  .hero-content h1 {
+    font-size: 2rem !important;
+  }
+  .hero-content div {
+    font-size: 1.1rem !important;
+    margin-bottom: 16px !important;
+  }
+  .hero-content p {
+    font-size: 1rem !important;
+    margin-bottom: 24px !important;
+  }
+}
