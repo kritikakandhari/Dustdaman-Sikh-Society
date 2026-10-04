@@ -4,7 +4,7 @@
 <title>Admin Panel – Dustdaman Sikh Society</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
   body { font-family: 'Poppins', sans-serif; background: #fef9c3; color: #333; margin:0; }
@@ -60,7 +60,7 @@
 </style>
 </head><body>
 <header>
-<img src="logo.jpg" alt="logo">
+<img src="assets/img/logo.jpg" alt="logo">
 <b>Dustdaman Sikh Society</b>
 <nav>
   <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
@@ -131,7 +131,7 @@
   <script type="module">
 import { db, auth, provider, ADMIN_EMAIL,
          collection, addDoc, getDocs, deleteDoc, doc, setDoc, getDoc, orderBy, query,
-         onAuthStateChanged, signInWithPopup, signOut } from './firebase.js';
+         onAuthStateChanged, signInWithPopup, signOut } from './assets/js/firebase.js';
 
 let currentUser = null;
 
